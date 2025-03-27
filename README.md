@@ -8,6 +8,6 @@ Language Syntax and Rules
 ---
 
 
-***Installation***
+Installation
 ---
 
