@@ -1,13 +1,13 @@
 # Math_Interpreter
 
-***Description
+Description
 ---
 
 
-***Language Syntax and Rules
+Language Syntax and Rules
 ---
 
 
-***Installation
+***Installation***
 ---
 
