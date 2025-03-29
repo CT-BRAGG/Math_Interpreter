@@ -1,5 +1,7 @@
 # My Programming Language
 
+version: v1.3
+
 A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string manipulation using a custom-built lexer, parser, and evaluator system written in Java. In the future, file input will be fixed and the program will have better error handling as a whole. 
 
 ---
