@@ -4,6 +4,7 @@
 
 import java.util.Scanner; 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 /** Methods for Program Input and Output */
 public class IO {
@@ -11,20 +12,35 @@ public class IO {
     public static Scanner input;
     private static File sourceCodeFile; 
     private static boolean hasValidFile;
+    public static boolean usingFile;
 
     // ---------------- PUBLIC METHODS  ---------------- 
 
     public static void printError(String error) {
         System.out.println("ERROR: "+error);
     }
-    public static void initializeIO(String[] args) throws Exception {
+    public static void initializeIO(String[] args) {
         checkForFile(args);
 
-        if (hasValidFile == false) {
+        try {
+            if (hasValidFile == false) {
+                System.out.println("using stdin.\n");
+                input = new Scanner(System.in);
+                usingFile = false;
+            } else {
+                System.out.println("using file.\n");
+                input = new Scanner(sourceCodeFile);
+                usingFile = true;
+            }
+        } catch (FileNotFoundException ex) {
+            IO.printError(Errors.badFileName+sourceCodeFile);
             input = new Scanner(System.in);
-        } else {
-            input = new Scanner(sourceCodeFile);
+            usingFile = false;
         }
+    }
+    /** prints string literal */
+    public static void printString(String stringLiteral) {
+        System.out.println(stringLiteral);
     }
     /** prints result to console */
     public static void printResult(double result) {
@@ -83,23 +99,31 @@ public class IO {
         boolean validity = true;
         char period = 46; 
         int numOfPeriods;
+        String name = "#";
 
         // has too end with .mpl
         if (!fileName.endsWith(".mpl")) {
+            System.out.println("file name needs to end with '.mpl'");
             validity = false;
         }
 
         // needs one period
         numOfPeriods = countChar(fileName, period);
         if (numOfPeriods != 1) {
+            System.out.println("file name has too many periods");
             validity = false;
         }
 
+        name = fileName.split("\\.")[0];
+        System.out.println("name: "+name);
 
         // needs to be numbers and letters only
-        if (isAlphaNumeric(fileName) == false) {
+        if (isAlphaNumeric(name) == false) {
+            System.out.println("file name not alphanumeric.");
             validity = false;
         }
+
+        System.out.println("fileNameValidity: "+validity);
 
         return validity;
     }

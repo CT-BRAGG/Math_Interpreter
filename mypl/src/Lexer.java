@@ -33,7 +33,9 @@ public class Lexer {
             if (token == null) {
                 throw new RuntimeException(Errors.unknownComponent+component);
             }
-            
+
+            //System.out.println(idx+". "+token.getValue()); // testing
+
             TokenQueue.addToken(token);
             prevToken = token;
 
@@ -42,8 +44,11 @@ public class Lexer {
                 String[] exprParts = Arrays.copyOfRange(lineComponents, idx + 1, len);
                 String expr = String.join(" ", exprParts);
 
+                //System.out.println("lexer: expr: "+expr); // testing
+
                 Token exprToken = new Token(Token.PossibleTokens.EXPRESSION);
                 exprToken.setValue(expr);
+
                 TokenQueue.addToken(exprToken);
 
                 break; 

@@ -1,15 +1,15 @@
 # My Programming Language
 
-version: v1.3
+version: v1.4
 
-A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string manipulation using a custom-built lexer, parser, and evaluator system written in Java. In the future, file input will be fixed and the program will have better error handling as a whole. 
+A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string manipulation using a custom-built lexer, parser, and evaluator system written in Java. It can either be run as a like a program or with a .mpl file.  
 
 ---
 
 ## How It Works
 
 1. **Input Handling**
-   - The `Main` class initializes components and reads from a file or stdin. (file input currently not working)
+   - The `Main` class initializes components and reads from a file or stdin.
 
 2. **Lexical Analysis**
    - The `Lexer` breaks input lines into tokens, using rules to identify keywords, variable names, literals, and operators.
@@ -32,8 +32,7 @@ A lightweight, interpreted programming language created for educational purposes
 
 ###  Build & Run
 ```bash
-javac *.java
-java Main
+java -jar mypl.jar
 ```
 
 ---

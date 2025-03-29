@@ -9,19 +9,19 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner;
 
+
     /** handles all program errors */
     public static void main(String[] args) {
+        String welcomeMessage = "Welcome to My Programming Language.\nLost? Enter 'help;'";
+        IO.initializeIO(args);
 
-        System.out.print("Welcome to My Programming Language");
+        System.out.print(IO.usingFile?"":welcomeMessage);
+
+
         while(true) {
             try {
-
                 intializeObjects(args);
                 runLanguageInterpreter();
-
-
-            } catch (FileNotFoundException ex) { 
-                IO.printError(Errors.badFileName);
 
             } catch (NumberFormatException ex) {
                 IO.printError(Errors.notANumber);
@@ -37,24 +37,33 @@ public class Main {
     /** calls all program initializers */
     public static void intializeObjects(String[] args) throws Exception{
         SymbolTable.initialize();
-        IO.initializeIO(args);
         Lexer.initialize();
         TokenQueue.initialize();
         scanner = new Scanner(System.in);
     }
     /** main program loop for interpreter */
     public static void runLanguageInterpreter() throws Exception{
-        System.out.print("\n>> ");
+        System.out.print(IO.usingFile?"":"\n>> ");
 
         // main program loop
         while (IO.input.hasNextLine() == true) {
             String line = IO.input.nextLine().trim();
 
             if (line.isEmpty()) continue;
+            if (line.equals("exit;")) {
+                System.out.println("\nadios.");
+                System.exit(0);
+            }
+            if (line.equals("help;")) {
+                HelpMenu.print();
+                System.out.print(IO.usingFile?"":">> ");
+                continue;
+            }
 
             Lexer.run(line);
             Parser.run();
-            System.out.print("\n>> ");
+
+            System.out.print(IO.usingFile?"":"\n>> ");
         }
     }
 }
