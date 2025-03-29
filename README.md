@@ -1,6 +1,6 @@
 # My Programming Language
 
-A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string manipulation using a custom-built lexer, parser, and evaluator system written in Java.
+A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string manipulation using a custom-built lexer, parser, and evaluator system written in Java. In the future, file input will be fixed and the program will have better error handling as a whole. 
 
 ---
 
@@ -40,20 +40,23 @@ java Main
 
 ###  Variable Declarations
 ```mpl
-double x <- 3 + 4;
-string name <- "Carson";
+double x <- 3;
+string msg <- "hello world";
+
+Only a number can be assigned to a when declaring a double variable. The statement "double x <- 3 + 4;" currently throws an error.
+
 ```
 
 ###  Assignments
 ```mpl
 x <- x + 2;
-name <- "UpdatedName";
+msg <- "goodbye";
 ```
 
 ###  Print Statements
 ```mpl
 print x;
-print name;
+print msg;
 print (x + 3) * 2;
 ```
 
