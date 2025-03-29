@@ -43,7 +43,8 @@ java Main
 double x <- 3;
 string msg <- "hello world";
 
-Only a number can be assigned to a when declaring a double variable. The statement "double x <- 3 + 4;" currently throws an error.
+Only a number can be assigned to a when declaring a double variable.
+The statement "double x <- 3 + 4;" currently throws an error.
 
 ```
 
