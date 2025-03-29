@@ -22,10 +22,12 @@ public class SymbolTable {
     /** adds a double variable to symbol table */
     public static void add(String varName, double value) {
         doubleVars.put(varName, value);
+        System.out.println("saved: "+varName+"="+value);
     }
     /** adds a string variable to symbol table */
     public static void add(String varName, String value) {
         stringVars.put(varName, value);
+        System.out.println("saved: "+varName+"="+value);
     }
     /** retreives value for given variable name */
     public static String getValue(String varName) {

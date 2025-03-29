@@ -59,7 +59,28 @@ public class Evaluator {
 
     /** prints evaluated expression */
     public static void printExpression(Token exprToken) {
-        String result = evaluateExpression(exprToken.getValue());
-        IO.printResult(result);
+        String expr = exprToken.getValue();
+
+        //System.out.println("eval print expr: "+expr); // testing
+
+        if (expr.startsWith("\"") && expr.endsWith("\"")) { 
+            // is string literal
+            expr = expr.substring(1, expr.length() - 1); // remvoe quotes
+            IO.printString(expr);
+
+        } else if (SymbolTable.hasDoubleVar(expr)) {
+            // is a double variable
+            String value = SymbolTable.getValue(expr);
+            IO.printResult(value);
+
+        } else if (SymbolTable.hasStringVar(expr)) {
+            // is a string variable
+            String value = SymbolTable.getValue(expr);
+            IO.printString(value);
+
+        } else {
+            String result = evaluateExpression(exprToken.getValue());
+            IO.printResult(result);
+        }
     }
 }

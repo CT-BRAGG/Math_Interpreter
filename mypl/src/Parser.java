@@ -46,6 +46,7 @@ public class Parser {
             throw new RuntimeException(Errors.incompleteDoubleStatement);
         }
 
+
         if (assign.getType() == Token.PossibleTokens.ASSIGN && expr.getType() == Token.PossibleTokens.EXPRESSION) {
             Evaluator.declareDoubleVariable(varToken.getValue(), expr.getValue());
         } else {
@@ -62,9 +63,24 @@ public class Parser {
         if (varToken == null || assign == null || literal == null) {
             throw new RuntimeException(Errors.incompleteStringStatement);
         }
+        String expr = literal.getValue();
 
-        if (assign.getType() == Token.PossibleTokens.ASSIGN && literal.getType() == Token.PossibleTokens.STRING_LITERAL) {
-            Evaluator.declareStringVariable(varToken.getValue(), literal.getValue());
+        /* 
+        System.out.println("var: "+varToken.getValue()); // testing
+        System.out.println("assign: "+assign.getValue());
+        System.out.println("literal: "+literal.getValue());
+        System.out.println("assigntype: "+assign.getType());
+        System.out.println("literalType: "+literal.getType());
+        */
+
+        if (assign.getType() == Token.PossibleTokens.ASSIGN && literal.getType() == Token.PossibleTokens.EXPRESSION) {
+            //System.out.println("we in"); // testing
+
+            if (expr.startsWith("\"") && expr.endsWith("\"")) {
+                Evaluator.declareStringVariable(varToken.getValue(), literal.getValue());
+            } else {
+                throw new RuntimeException(Errors.badStringStatement);
+            }
         } else {
             throw new RuntimeException(Errors.badStringStatement);
         }
