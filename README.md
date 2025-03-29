@@ -1,4 +1,4 @@
-# My Programming Language (MyPL)
+# My Programming Language
 
 A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string manipulation using a custom-built lexer, parser, and evaluator system written in Java.
 
