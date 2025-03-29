@@ -7,7 +7,7 @@ A lightweight, interpreted programming language created for educational purposes
 ## How It Works
 
 1. **Input Handling**
-   - The `Main` class initializes components and reads from a file or stdin.
+   - The `Main` class initializes components and reads from a file or stdin. (file input currently not working)
 
 2. **Lexical Analysis**
    - The `Lexer` breaks input lines into tokens, using rules to identify keywords, variable names, literals, and operators.
