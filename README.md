@@ -73,7 +73,6 @@ print (x + 3) * 2;
 
 ###  Error Handling
 - Missing semicolon, unknown components, invalid variable names, undeclared variables, and invalid expressions are reported with custom error messages.
-- When an error is thrown, all the variables in the symbol table are removed.
 
 ---
 
