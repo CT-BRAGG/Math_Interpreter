@@ -25,6 +25,10 @@ public class ExpressionParser {
         return x;
     }
 
+    // -------------------------------------------------
+    // ---------------- PRIVATE METHODS ---------------- 
+    // -------------------------------------------------
+
     /** moves to next char in the expression */
     private void nextChar() {
         // ch = (++pos < expr.length()) ? expr.charAt(pos) : -1;
