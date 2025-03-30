@@ -42,7 +42,8 @@ public class Evaluator {
     public static String evaluateExpression(String expr) {
         for (String varName : SymbolTable.getDoubleVars().keySet()) {
             double val = SymbolTable.getDoubleVars().get(varName);
-            expr = expr.replaceAll("\\b" + java.util.regex.Pattern.quote(varName) + "\\b", String.valueOf(val));
+            expr = expr.replaceAll("\\b" + 
+                    java.util.regex.Pattern.quote(varName) + "\\b", String.valueOf(val));
         }
 
         try {
