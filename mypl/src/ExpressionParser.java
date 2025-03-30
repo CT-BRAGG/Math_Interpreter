@@ -90,24 +90,27 @@ public class ExpressionParser {
 
     /** parses and evaluates expnt expr */
     private double parseFactor() {
-        // medium precedence
         double x = parsePrimary();
 
-        while (eat('*') == true) {
-            // if there still is '*'s in expr
-            if (eat('*')) {
-                // is exponent
-                x = Math.pow(x, parseFactor());
+        while (true) {
+            int savedPos = pos;
+            int savedCh = ch;
 
+            if (eat('*') && eat('*')) {
+                // if next two non-whitespace chars are * 
+                x = Math.pow(x, parseFactor());
             } else {
-                // not exponent operator
-                // move back to last whitespace ch
-                pos--;
+                // backtrack if not actually exponentiation
+                pos = savedPos;
+                ch = savedCh;
+                break;
             }
         }
+
         return x;
     }
 
+    /** finds next number */
     private double parsePrimary() {
         // highest precedence
         if (eat('+') == true) {
