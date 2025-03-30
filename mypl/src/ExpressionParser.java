@@ -1,5 +1,5 @@
 // Expression Parser
-// author: Carson Bragg
+// author: Carson Bragg; ai assisted
 // desc: This is a recusive style expression evaluator. It iterates
 //        through the expression until it finds a 
 
