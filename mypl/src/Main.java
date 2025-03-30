@@ -1,6 +1,7 @@
 // Interpreter Main Entry Point 
-// desc: calls the Interpreter
 // author: Carson Bragg
+// version: v1.5
+// desc: calls the Interpreter
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -12,12 +13,11 @@ public class Main {
 
     /** handles all program errors */
     public static void main(String[] args) {
-        String welcomeMessage = "Welcome to My Programming Language.\nLost? Enter 'help;'";
-        IO.initializeIO(args);
+        String welcomeMessage = "Welcome to My Programming Language."+
+                "\nLost? Enter 'help;'";
+        IO.initialize(args);
 
         System.out.print(IO.usingFile?"":welcomeMessage);
-
-
         while(true) {
             try {
                 intializeObjects(args);
@@ -49,6 +49,7 @@ public class Main {
         while (IO.input.hasNextLine() == true) {
             String line = IO.input.nextLine().trim();
 
+            // special cmds / cases
             if (line.isEmpty()) continue;
             if (line.equals("exit;")) {
                 System.out.println("\nadios.");
@@ -60,8 +61,8 @@ public class Main {
                 continue;
             }
 
-            Lexer.run(line);
-            Parser.run();
+            Lexer.run(line); // builds token queue
+            Parser.run(); // evaluates each token in token queue
 
             System.out.print(IO.usingFile?"":"\n>> ");
         }

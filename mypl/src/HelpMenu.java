@@ -2,7 +2,7 @@
 // author: Carson Bragg
 // desc: Contains the help menu
 
-/** Help Menu */
+/** Class for the Help Menu */
 public class HelpMenu {
     /** prints the help menu */
     public static void print() {

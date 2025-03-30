@@ -28,6 +28,10 @@ public class Token {
         STATEMENT_TERMINATOR
     }
 
+    //-----------------------------------------------------
+    // ------------------ CONTSTRUCTORS ------------------
+    //-----------------------------------------------------
+
     public Token() {
         this.tokenType = PossibleTokens.UNKNOWN;
         this.expression = "";
@@ -54,6 +58,11 @@ public class Token {
 
         handleNewValue(newValue);
     }
+
+    //-----------------------------------------------------
+    // ------------------ PUBLIC METHODS ------------------
+    //-----------------------------------------------------
+
     /** returns the token's value if it has one */
     public String getValue() {
         if (this.tokenType == PossibleTokens.EXPRESSION) {
@@ -105,6 +114,11 @@ public class Token {
     public void setIsDeclared(boolean truthValue) {
         this.isDeclared = truthValue;
     }
+
+    //------------------------------------------------------
+    // ------------------ PRIVATE METHODS ------------------
+    //------------------------------------------------------
+
     /** handles the assignment of the given value */
     private void handleNewValue(String newValue) {
         if (this.tokenType == PossibleTokens.EXPRESSION) {

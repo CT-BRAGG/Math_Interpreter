@@ -1,13 +1,12 @@
 // Symbol Tables
 // author: carson
-// desc: Contains the code responsible for manaing
-//       the data structures which house the various
-//       program variabls
+// desc: Contains the code responsible for managing
+//       the data structures for program variables
 
 import java.util.Map;
 import java.util.HashMap;
 
-/** Symbol Tables for program */
+/** Symbol Table for program variables*/
 public class SymbolTable {
 
     private static Map<String, Double> doubleVars;
@@ -73,7 +72,6 @@ public class SymbolTable {
     public static Map<String, String> getStringVars() {
         return stringVars;
     }
-
     /** checks if string variable exists */
     public static boolean hasStringVar(String varName) {
         return stringVars.containsKey(varName);
