@@ -1,6 +1,10 @@
 # My Programming Language
 
+<<<<<<< HEAD
 version: v1.6
+=======
+version: v1.7
+>>>>>>> 042e80b (updated help menu; altered variable declaration output messge when using file input)
 
 A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string variables using a custom-built lexer, parser, and evaluator system written in Java. It can either be run as a like terminal like python or with a .mpl file.  
 

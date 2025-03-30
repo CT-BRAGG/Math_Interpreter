@@ -43,7 +43,8 @@ public class HelpMenu {
                 "\t- every statmenet must end with the statement terminator\n"+
                 "\t- must use a string/number literal to declare a variable\n"+
                 "\t- decimals are optional for number literals\n"+
-                "\t- string literals must be enclosed in double quotes\n";
+                "\t- string literals must be enclosed in double quotes\n"+
+                "\t- this interpreter can only handle one command per line\n";
 
         System.out.println(helpMenu);
     }
