@@ -2,7 +2,7 @@
 
 version: v1.6
 
-A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string manipulation using a custom-built lexer, parser, and evaluator system written in Java. It can either be run as a like terminal like python or with a .mpl file.  
+A lightweight, interpreted programming language created for educational purposes. It supports variable declarations, basic arithmetic expressions with operator precedence and parentheses, and string variables using a custom-built lexer, parser, and evaluator system written in Java. It can either be run as a like terminal like python or with a .mpl file.  
 
 ---
 
