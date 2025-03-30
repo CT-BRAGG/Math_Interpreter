@@ -52,7 +52,7 @@ public class Parser {
 
         if (assignToken.getType() == Token.PossibleTokens.ASSIGN 
                     && exprToken.getType() == Token.PossibleTokens.EXPRESSION) {
-            // is valid double declaration
+            // if valid double declaration
             Evaluator.declareDoubleVariable(varToken.getValue(), exprToken.getValue());
 
         } else {
@@ -81,7 +81,7 @@ public class Parser {
 
         if (assign.getType() == Token.PossibleTokens.ASSIGN && 
                     literal.getType() == Token.PossibleTokens.EXPRESSION) {
-            // is valid string declaration
+            // if valid string declaration
 
             //System.out.println("inside if statement"); // testing
             if (expr.startsWith("\"") && expr.endsWith("\"")) {
@@ -107,7 +107,7 @@ public class Parser {
 
         if (second.getType() == Token.PossibleTokens.ASSIGN && 
                     third.getType() == Token.PossibleTokens.EXPRESSION) {
-            // valid double assigment grammar
+            // if valid double assigment grammar
             Evaluator.assignDoubleLiteral(first.getValue(), third.getValue());
 
         } else {
@@ -127,7 +127,7 @@ public class Parser {
 
         if (secondToken.getType() == Token.PossibleTokens.ASSIGN && 
                     thirdToken.getType() == Token.PossibleTokens.STRING_LITERAL) {
-            // valid string assignment grammar
+            // if valid string assignment grammar
             Evaluator.assignStringLiteral(firstToken.getValue(), thirdToken.getValue());
 
         } else {
