@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 /** Entry Point for Interpreter */
 public class Main {
-    private static Scanner scanner;
-
+    // private static Scanner scanner;
 
     /** handles all program errors */
     public static void main(String[] args) {
