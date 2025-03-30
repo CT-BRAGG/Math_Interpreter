@@ -42,19 +42,19 @@ public class Lexer {
 
             TokenQueue.addToken(token);
             prevToken = token;
-
-             /** if just added an ASSIGN or PRINT token, rest of line is an expression */
-            if (token.getType() == Token.PossibleTokens.ASSIGN || token.getType() == Token.PossibleTokens.PRINT) {
+            
+            if (token.getType() == Token.PossibleTokens.ASSIGN || 
+                        token.getType() == Token.PossibleTokens.PRINT) {
+                //  if just added an ASSIGN or PRINT token, rest of line is an expression
                 String[] exprParts = Arrays.copyOfRange(lineComponents, idx + 1, len);
                 String expr = String.join(" ", exprParts);
 
                 //System.out.println("lexer: expr: "+expr); // testing
-
+                
                 Token exprToken = new Token(Token.PossibleTokens.EXPRESSION);
                 exprToken.setValue(expr);
-
                 TokenQueue.addToken(exprToken);
-
+                
                 break; 
             }
         }
@@ -81,7 +81,7 @@ public class Lexer {
             Token.PossibleTokens type = Token.PossibleTokens.DOUBLE_DECLARE;
             newToken = new Token(component, type);
 
-        } else if (component.equals("string")) {
+        } else if (component.equals("string")) {{
             // string declaration keyword
             isExpectingVarName = true;
             currDeclareType = Token.PossibleTokens.STRING_VARIABLE;
