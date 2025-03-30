@@ -1,6 +1,6 @@
 // Interpreter Main Entry Point 
 // author: Carson Bragg
-// version: v1.5
+// version: v1.6
 // desc: calls the Interpreter
 
 import java.io.FileNotFoundException;
