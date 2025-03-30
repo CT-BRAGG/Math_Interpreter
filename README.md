@@ -30,9 +30,10 @@ A lightweight, interpreted programming language created for educational purposes
 - Java JDK 11 or higher
 - A terminal or shell (Linux/macOS/Windows)
 
-###  Build & Run
+###  Run
 ```bash
-java -jar mypl.jar
+java -jar mypl.jar # for cli interface
+java -jar mypl.jar myplSourceCodeFile.mpl 
 ```
 
 ---
