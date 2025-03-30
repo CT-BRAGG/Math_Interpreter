@@ -8,18 +8,22 @@ import java.io.FileNotFoundException;
 
 /** Methods for Program Input and Output */
 public class IO {
-
+	
+    // variables
     public static Scanner input;
     private static File sourceCodeFile; 
     private static boolean hasValidFile;
     public static boolean usingFile;
 
-    // ---------------- PUBLIC METHODS  ---------------- 
+    // -------------------------------------------------
+    // ---------------- PUBLIC METHODS ----------------- 
+    // -------------------------------------------------
 
     public static void printError(String error) {
         System.out.println("ERROR: "+error);
     }
-    public static void initializeIO(String[] args) {
+    /** performs intializing operations */
+    public static void initialize(String[] args) {
         checkForFile(args);
 
         try {
@@ -51,7 +55,9 @@ public class IO {
         print(result);
     }
     
-    //  ---------------- PRIVATE METHODS ---------------- 
+    // -------------------------------------------------
+    // ---------------- PRIVATE METHODS ---------------- 
+    // -------------------------------------------------
 
     /** hidden print method */
     private static void print(String result) {
@@ -99,9 +105,9 @@ public class IO {
         boolean validity = true;
         char period = 46; 
         int numOfPeriods;
-        String name = "#";
+        String name = "#"; // null
 
-        // has too end with .mpl
+        // has too end with '.mpl'
         if (!fileName.endsWith(".mpl")) {
             System.out.println("file name needs to end with '.mpl'");
             validity = false;
@@ -122,8 +128,7 @@ public class IO {
             System.out.println("file name not alphanumeric.");
             validity = false;
         }
-
-        System.out.println("fileNameValidity: "+validity);
+        System.out.println("validFileName: "+validity);
 
         return validity;
     }
