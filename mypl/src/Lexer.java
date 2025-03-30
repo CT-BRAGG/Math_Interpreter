@@ -10,6 +10,10 @@ public class Lexer {
     private static boolean isExpectingVarName;
     private static Token.PossibleTokens currDeclareType;
 
+    // ------------------------------------------------
+    // ---------------- PUBLIC METHODS ---------------- 
+    // ------------------------------------------------
+
     /** initializes lexer variables */
     public static void initialize() {
         prevToken = null;
@@ -131,6 +135,11 @@ public class Lexer {
 
         return newToken;
     }    
+
+    // -------------------------------------------------
+    // ---------------- PRIVATE METHODS ---------------- 
+    // -------------------------------------------------
+    
     /** checks for statement terminator */
     private static String checkForTerminator(String line) throws Exception {
         if (!line.endsWith(";")) {
