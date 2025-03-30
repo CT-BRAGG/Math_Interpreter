@@ -33,7 +33,7 @@ A lightweight, interpreted programming language created for educational purposes
 ###  Run
 ```bash
 java -jar mypl.jar # for cli interface
-java -jar mypl.jar myplSourceCodeFile.mpl 
+java -jar mypl.jar myplSourceCodeFile.mpl # alternate method for file input
 ```
 
 ---
