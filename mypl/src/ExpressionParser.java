@@ -1,7 +1,13 @@
 // Expression Parser
 // author: Carson Bragg; ai assisted
 // desc: This is a recusive style expression evaluator. It iterates
-//        through the expression until it finds a 
+//        through the expression until it finds the next available
+//        symbol and checks if it is a reconized symbol. An error
+//        is thrown if the parser doesn't know one of the given
+//        characterss; whitespace is ignored. If it is, then the 
+//        next method is called until the highest precedence is 
+//        reached. Then it keeps calling itself until it works back 
+//        down to the lowest precedence.
 
 /** pareses and evaluates an expression */
 public class ExpressionParser {
