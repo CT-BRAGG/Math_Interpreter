@@ -43,18 +43,20 @@ public class Parser {
     /** Handles declaration of a new double variable */
     private static void handleDoubleDeclaration() throws Exception{
         Token varToken = TokenQueue.getNextToken();
-        Token assign = TokenQueue.getNextToken();
-        Token expr = TokenQueue.getNextToken();
+        Token assignToken = TokenQueue.getNextToken();
+        Token exprToken = TokenQueue.getNextToken();
 
-        if (varToken == null || assign == null || expr == null) {
+        if (varToken == null || assignToken == null || exprToken == null) {
             throw new RuntimeException(Errors.incompleteDoubleStatement);
         }
 
+        if (assignToken.getType() == Token.PossibleTokens.ASSIGN 
+                    && exprToken.getType() == Token.PossibleTokens.EXPRESSION) {
+            // is valid double declaration
+            Evaluator.declareDoubleVariable(varToken.getValue(), exprToken.getValue());
 
-        if (assign.getType() == Token.PossibleTokens.ASSIGN && expr.getType() == Token.PossibleTokens.EXPRESSION) {
-            Evaluator.declareDoubleVariable(varToken.getValue(), expr.getValue());
         } else {
-            throw new RuntimeException(Errors.badStringStatement);
+            throw new RuntimeException(Errors.badDoubleStatement);
         }
     }
 
@@ -79,8 +81,9 @@ public class Parser {
 
         if (assign.getType() == Token.PossibleTokens.ASSIGN && 
                     literal.getType() == Token.PossibleTokens.EXPRESSION) {
-            //System.out.println("inside if statement"); // testing
+            // is valid string declaration
 
+            //System.out.println("inside if statement"); // testing
             if (expr.startsWith("\"") && expr.endsWith("\"")) {
                 // expression is a string literal
                 Evaluator.declareStringVariable(varToken.getValue(), literal.getValue());

@@ -110,7 +110,7 @@ public class ExpressionParser {
         return x;
     }
 
-    /** finds next number */
+    /** finds next number eventually */
     private double parsePrimary() {
         // highest precedence
         if (eat('+') == true) {

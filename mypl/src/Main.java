@@ -16,6 +16,7 @@ public class Main {
         String welcomeMessage = "Welcome to My Programming Language."+
                 "\nLost? Enter 'help;'";
         IO.initialize(args);
+        SymbolTable.initialize();
 
         System.out.print(IO.usingFile?"":welcomeMessage);
         while(true) {
@@ -36,7 +37,6 @@ public class Main {
     }
     /** calls all program initializers */
     public static void intializeObjects(String[] args) throws Exception{
-        SymbolTable.initialize();
         Lexer.initialize();
         TokenQueue.initialize();
         scanner = new Scanner(System.in);

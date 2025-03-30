@@ -6,7 +6,6 @@
 public class Errors {
     // Main Errors
     public static final String bigOopies = "something went terribly wrong.";
-    public static final String notANumber = "expression needs to be equal to a number.";
 
     // IO Errors
     public static final String badFileName = "IO: Program File name is invalid.";
@@ -22,6 +21,7 @@ public class Errors {
     public static final String badPrintExpression = "Parser: Invalid print target: "; 
     public static final String incompleteStringStatement = "Parser: Incomplete string statement";
     public static final String incompleteDoubleStatement = "Parser: Incomplete double statement";
+    public static final String badDoubleStatement = "Parser: malformed double statement";
     public static final String badStartOfLine = "Parser: Unexpected start of line: ";
 
     //Expression Parers Errors
@@ -34,5 +34,5 @@ public class Errors {
     public static final String mustEquateToNum = "Eval: Expression must evaluate to a number: ";
     public static final String undeclareDoubleVar = "Eval: Assignment failed: undeclared double variable ";
     public static final String failedToEvaluate = "Eval: Failed to evaluate expression: ";
-
+    public static final String notANumber = "Eval: expression needs to be equal to a number.";
 }
