@@ -38,7 +38,7 @@ public class Main {
     public static void intializeObjects(String[] args) throws Exception{
         Lexer.initialize();
         TokenQueue.initialize();
-        scanner = new Scanner(System.in);
+        //scanner = new Scanner(System.in);
     }
     /** main program loop for interpreter */
     public static void runLanguageInterpreter() throws Exception{
